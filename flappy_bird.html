@@ -11,55 +11,24 @@
   <script src="js/bird.js"></script>
   <script src="js/scoring.js"></script>
   <script src="js/gameover.js"></script>
-  <style>
-    #canvas {
-      border: 1px solid #000;
-      margin: 0 auto;
-      display: block;
-    }
-  </style>
-  <script>
-    window.addEventListener('load',function(){
-      var cvs = document.querySelector("#canvas");
-      var ctx = cvs.getContext('2d');
-      allImgLoad({
-        'land':'./img/land.png',
-        'sky':'./img/sky.png',
-        'pipeDown':'./img/pipeDown.png',
-        'pipeUp':'./img/pipeUp.png',
-        'bird':'./img/bird.png',
-      },function(imgObj){
-        // console.log(imgObj,'finish');
-        cvs.width = imgObj.sky.width;
-        cvs.height = imgObj.sky.height;
-        var scene = getScene(ctx,imgObj);
-        var gameove = getGameover(ctx);
-        var isRun = true;
-        var startFlag=true;
-        //添加结束事件
-        scene.addListener(function(){
-          isRun=false;
-          gameove.draw();
-        });
-        //不断绘制页面，进行游戏
-        (function run(){
-          // if(startFlag){
-          //   var startTime =new Date();
-          //   startTime=startTime.getTime() 
-          //   startFlag=false;
-          // }
-          ctx.clearRect( 0, 0, cvs.width, cvs.height);
-          // scene.draw(startTime);
-          scene.draw();
-          if(isRun){
-            requestAnimationFrame(run);
-          }
-        }());
-      });
-    });
-  </script>
+  <script src="js/initPage.js"></script>
+  <link rel="stylesheet" href="css/flappy_bird.css">
 </head>
 <body>
-  <canvas width="500" height="500" id="canvas"></canvas>
+  <div class="gameBox">
+    <div class="box-left">
+      <img src="img/fybird_log.png" alt="飞翔的小鸟">
+      <div class="start">
+        <div class="birdBox">
+          <div class="bird"></div>
+        </div>
+        开始/暂停
+      </div>
+      <div class="reStart">重新开始</div>
+    </div>
+    <div class="box-right">
+      <canvas width="500" height="500" id="canvas"></canvas>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,0 +1,89 @@
+body,html {
+  margin: 0;
+  padding: 0;
+  background: #1F394D url('../images/bgGradient.png');
+}
+.gameBox {
+  box-sizing: border-box;
+  width: 1000px;
+  height: 600px;
+  margin: 50px auto 0;
+  background-color: #70b370;
+  .box-left {
+    width: 200px;
+    height: 600px;
+    float: left;
+    &>img {
+      width: 200px;
+      height: 200px;
+      -moz-user-select: none;   
+      -webkit-user-select: none;   
+      -ms-user-select: none;   
+      -khtml-user-select: none;   
+      user-select: none;  
+    }
+    &>div {
+      width: 200px;
+      height: 200px;
+      box-sizing: border-box;
+      border-top: 1px solid #8ba461;
+      -moz-user-select: none;   
+      -webkit-user-select: none;   
+      -ms-user-select: none;   
+      -khtml-user-select: none;   
+      user-select: none;
+      cursor: pointer;
+      &.start{
+        position: relative;
+        .birdBox{
+          position: absolute;
+          width: 52px;
+          height: 45px;
+          position: absolute;
+          left:50%;
+          top:50%;
+          margin-left: -26px;
+          margin-top: -22.5px;
+          transition:top 4s linear 0s;
+          .bird {
+            width: 52px;
+            height: 45px;
+            position: absolute;
+            left:0;
+            top:0;
+            background:url("../img/bird.png") no-repeat 0 top;
+          }
+        }
+        &:hover {
+          .birdBox {
+            top:20%;
+            .bird {
+              animation:active1 0.5s steps(1) infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+  .box-right {
+    width: 800px;
+    height: 600px;
+    float: right;
+    #canvas {
+      border-radius: 20px;
+      width: 800px;
+      height: 600px;
+    }
+  }
+}
+@keyframes active1 {
+    0%{
+      background-position: 0 0;
+    }
+    50%{
+      background-position: -52px 0;
+    }
+    100%{
+        background-position: -104px 0;
+    }
+}
