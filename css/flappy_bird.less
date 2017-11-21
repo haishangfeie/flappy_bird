@@ -1,14 +1,17 @@
 body,html {
   margin: 0;
   padding: 0;
-  background: #1F394D url('../images/bgGradient.png');
+  background: #1F394D url('../img/bgGradient.png');
 }
 .gameBox {
+  border-radius: 20px;
   box-sizing: border-box;
   width: 1000px;
   height: 600px;
   margin: 50px auto 0;
-  background-color: #70b370;
+  background-color: #abcc78;
+  font: 700 30px/35px "MicroSoft YaHei";
+  color: #1F394D;
   .box-left {
     width: 200px;
     height: 600px;
@@ -37,31 +40,79 @@ body,html {
         position: relative;
         .birdBox{
           position: absolute;
-          width: 52px;
-          height: 45px;
+          width: 73px;
+          height: 64px;
           position: absolute;
           left:50%;
           top:50%;
-          margin-left: -26px;
+          //鸟的宽度是27px
+          margin-left: -27px;
           margin-top: -22.5px;
-          transition:top 4s linear 0s;
+          transition:top 0.5s linear 0s;
           .bird {
-            width: 52px;
-            height: 45px;
+            width: 73px;
+            height: 64px;
             position: absolute;
             left:0;
             top:0;
-            background:url("../img/bird.png") no-repeat 0 top;
+            background:url("../img/big_bird.png") no-repeat 0 top;
           }
+
+        }
+        span {
+          position: absolute;
+          top: 95px;
+          left: 30px;
+          opacity: 0;
+          transition:opacity 0.5s linear 0s;
         }
         &:hover {
           .birdBox {
-            top:20%;
+            top:25%;
             .bird {
-              animation:active1 0.5s steps(1) infinite;
+              animation:active1 0.3s steps(1) infinite;
             }
           }
+          span {
+            transition:opacity 0.5s linear 0.5s;
+            opacity: 1;
+            z-index: 99;
+          }
         }
+      }
+      &.reStart {
+        position: relative;
+        i {
+          position: absolute;
+          left:50%;
+          top:50%;
+          margin-left: -35px;
+          margin-top: -35px;
+          width: 70px;
+          height: 70px;
+          border-radius: 20%;
+          background-image: radial-gradient(70px at center,#e00 ,#a00);
+          transition:top 0.5s linear 0s;
+        }
+        span {
+          position: absolute;
+          top: 95px;
+          left: 50%;
+          margin-left: -60px;
+          opacity: 0;
+          transition:opacity 0.5s linear 0s;
+        }
+        &:hover {
+          i{
+            top: 25%;
+          }
+          span {
+            transition:opacity 0.5s linear 0.5s;
+            opacity: 1;
+            z-index: 99;
+          }
+        }
+
       }
     }
   }
@@ -70,7 +121,7 @@ body,html {
     height: 600px;
     float: right;
     #canvas {
-      border-radius: 20px;
+      border-radius: 0 20px 20px 0;
       width: 800px;
       height: 600px;
     }
@@ -81,9 +132,9 @@ body,html {
       background-position: 0 0;
     }
     50%{
-      background-position: -52px 0;
+      background-position: -82px 0;
     }
     100%{
-        background-position: -104px 0;
+        background-position: -166px 0;
     }
 }

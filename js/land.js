@@ -2,6 +2,10 @@
 (function(w){
   function Land(ctx,landImg,speed){
     Land.len++;
+    if(Land.len>4){
+      Land.len=1;
+      this.x = this.width *(Land.len-1);
+    }
     this.ctx =ctx;
     this.landImg =landImg;
     this.speed =speed;

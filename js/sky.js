@@ -2,6 +2,10 @@
 (function(w){
   function Sky(ctx,skyImg,speed){
     Sky.len +=1;
+    if(Sky.len>2){
+      Sky.len=1;
+      this.x = this.width *(Sky.len-1);
+    }
     this.ctx =ctx;
     this.skyImg =skyImg;
     this.speed =speed;
@@ -9,6 +13,7 @@
     this.width = this.skyImg.width;
     this.x = this.width *(Sky.len-1);
   }
+
   //天空图片数量
   Sky.len = 0;
   Sky.prototype = {

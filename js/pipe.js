@@ -20,6 +20,10 @@
     this.height = this.pipeDownImg.height;
 
     Pipe.len++;
+    if(Pipe.len>6){
+      Pipe.len=1;
+      this.x = 300 + this.width*3*(Pipe.len-1);
+    }
 
     this.x = 300 + this.width*3*(Pipe.len-1);
     this.y =0;

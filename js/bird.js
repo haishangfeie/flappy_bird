@@ -19,6 +19,7 @@
     this.birdRadian =0;
     this.maxBirdRadian =Math.PI/3;
     this.bind(w);
+    this.resetBird=false;
   }
   Bird.prototype = {
     constructor : Bird,
@@ -54,7 +55,7 @@
   } ;
   var bird = null;
   w.getBird=function(obj){
-    if(!bird){
+    if(!bird || bird.resetBird){
       bird =new Bird(obj);
     }
     return bird;
