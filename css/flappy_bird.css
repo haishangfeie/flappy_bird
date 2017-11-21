@@ -1,0 +1,133 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: #1f394d url('../img/bgGradient.png');
+}
+.gameBox {
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 1000px;
+  height: 600px;
+  margin: 50px auto 0;
+  background-color: #abcc78;
+  font: 700 30px/35px "MicroSoft YaHei";
+  color: #1F394D;
+}
+.gameBox .box-left {
+  width: 200px;
+  height: 600px;
+  float: left;
+}
+.gameBox .box-left > img {
+  width: 200px;
+  height: 200px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.gameBox .box-left > div {
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  border-top: 1px solid #8ba461;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.gameBox .box-left > div.start {
+  position: relative;
+}
+.gameBox .box-left > div.start .birdBox {
+  width: 73px;
+  height: 64px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -27px;
+  margin-top: -22.5px;
+  transition: top 0.5s linear 0s;
+}
+.gameBox .box-left > div.start .birdBox .bird {
+  width: 73px;
+  height: 64px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("../img/big_bird.png") no-repeat 0 top;
+}
+.gameBox .box-left > div.start span {
+  position: absolute;
+  top: 95px;
+  left: 30px;
+  opacity: 0;
+  transition: opacity 0.5s linear 0s;
+}
+.gameBox .box-left > div.start:hover .birdBox {
+  top: 25%;
+}
+.gameBox .box-left > div.start:hover .birdBox .bird {
+  animation: active1 0.3s steps(1) infinite;
+}
+.gameBox .box-left > div.start:hover span {
+  transition: opacity 0.5s linear 0.5s;
+  opacity: 1;
+  z-index: 99;
+}
+.gameBox .box-left > div.reStart {
+  position: relative;
+}
+.gameBox .box-left > div.reStart i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -35px;
+  margin-top: -35px;
+  width: 70px;
+  height: 70px;
+  border-radius: 20%;
+  background-image: radial-gradient(70px at center, #ee0000, #aa0000);
+  transition: top 0.5s linear 0s;
+}
+.gameBox .box-left > div.reStart span {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.5s linear 0s;
+}
+.gameBox .box-left > div.reStart:hover i {
+  top: 25%;
+}
+.gameBox .box-left > div.reStart:hover span {
+  transition: opacity 0.5s linear 0.5s;
+  opacity: 1;
+  z-index: 99;
+}
+.gameBox .box-right {
+  width: 800px;
+  height: 600px;
+  float: right;
+}
+.gameBox .box-right #canvas {
+  border-radius: 0 20px 20px 0;
+  width: 800px;
+  height: 600px;
+}
+@keyframes active1 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -82px 0;
+  }
+  100% {
+    background-position: -166px 0;
+  }
+}

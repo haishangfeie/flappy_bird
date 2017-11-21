@@ -23,6 +23,10 @@ window.addEventListener('load',function(){
 			var bird = getBird();
 			bird.resetBird = true;
 			scene._initroles();
+			if(isRun==false){
+				isRun=true;
+				run();
+			}
 
 		}
 
